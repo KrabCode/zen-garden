@@ -64,7 +64,7 @@ function sliderInt(sliderName){
 function draw() {
     background(0);
     updateSidebar();
-    if(mouseIsPressed && (mouseX <= width + handleLength && mouseX >= -handleLength && mouseY <= height+ handleLength && mouseY >= -handleLength)){
+    if(mouseIsPressed){
         rakePressSand();
     }
 

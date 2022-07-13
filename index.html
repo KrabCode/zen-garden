@@ -21,13 +21,15 @@
         <h2>Zen Garden</h2>
         <ul class="mainGuiList">
             <li>
-                <label for="slider_slopeStabilityThreshold">sand slope stability </label>
+                <label for="slider_slopeStabilityThreshold">sand slope stability</label>
                 <input type="range" id="slider_slopeStabilityThreshold" class="slider" min="1" max="1000" value="350" oninput="this.nextElementSibling.value = this.value / 1000">
                 <output>0.35</output>
             </li>
 
             <li>
                 <label for="slider_slopeDeteriorationRate">sand erosion speed</label>
+                <br>
+                <label for="slider_slopeDeteriorationRate" style="font-size: 12px">(glitchy when > stability)</label>
                 <input type="range" id="slider_slopeDeteriorationRate" class="slider" min="1" max="1000" value="25" oninput="this.nextElementSibling.value = this.value / 1000">
                 <output>0.025</output>
             </li>
