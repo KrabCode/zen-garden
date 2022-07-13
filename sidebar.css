@@ -79,8 +79,8 @@ h2 {
     transition: 0.3s;
     position: absolute;
     top: 0;
+    left: 0;
     font-size: 60px;
-    z-index: 0;
 }
 
 .openbtn:hover {

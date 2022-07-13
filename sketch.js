@@ -1,4 +1,5 @@
 
+let mainCanvas;
 let grid = [];
 let neighbourPositions = [];
 let rows = 70;
@@ -15,7 +16,7 @@ let erasePct = 0;
 
 let handleLengthMax = 150;
 let handleLengthMin = 100;
-let handleLength = 0;
+let handleLength = 125;
 let handlePos; // where the handle touches the ground and intersects the perpendicular rake
 let handlePosPrev;
 let handleDir;
@@ -25,8 +26,8 @@ let rakePointCount = 6;
 let rakeDir;
 
 function setup() {
-    let size = min(windowWidth, windowHeight) * 0.8;
-    createCanvas(size, size);
+    let size = min(windowWidth, windowHeight);
+    mainCanvas = createCanvas(size, size);
     initGrid();
     neighbourPositions.push(createVector(0,-1));
     neighbourPositions.push(createVector(0,+1));
@@ -39,14 +40,36 @@ function setup() {
     colorRakeIdle = color(150, 0, 0);
 }
 
+function updateSidebar() {
+    slopeStabilityThreshold = sliderFloat("slider_slopeStabilityThreshold");
+    slopeDeteriorationRate = sliderFloat("slider_slopeDeteriorationRate");
+    let intendedDetail = sliderInt("slider_detail");
+    if(intendedDetail !== rows){
+        rows = intendedDetail;
+        cols = rows;
+        initGrid();
+    }
+    rakeWidth = sliderInt("slider_rakeWidth");
+    rakePointCount = sliderInt("slider_rakePoints");
+}
+
+function sliderFloat(sliderName){
+    return parseFloat(document.getElementById(sliderName).value)  / 1000.
+}
+
+function sliderInt(sliderName){
+    return parseFloat(document.getElementById(sliderName).value)
+}
+
 function draw() {
     background(0);
-    rakePressSand();
-    moveHandleAndRake();
-    // mouseInteraction();
-    if(frameCount % 1 === 0){
-        updateGrid();
+    updateSidebar();
+    if(mouseIsPressed && (mouseX <= width + handleLength && mouseX >= -handleLength && mouseY <= height+ handleLength && mouseY >= -handleLength)){
+        rakePressSand();
     }
+
+    moveHandleAndRake();
+    updateGrid();
     drawGrid();
     drawHandleAndRake();
 }

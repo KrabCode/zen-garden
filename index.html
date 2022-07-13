@@ -7,10 +7,53 @@
     <script src="https://github.com/processing/p5.js/releases/download/v1.4.1/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
+    <script src="sidebar.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
     <meta charset="utf-8" />
 </head>
 <body>
+<div id="container">
+    <a href="javascript:void(0)" class="openbtn" onclick="openNav()">></a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <h2>Zen Garden</h2>
+        <ul class="mainGuiList">
+            <li>
+                <label for="slider_slopeStabilityThreshold">slope stability: </label>
+                <input type="range" id="slider_slopeStabilityThreshold" class="slider" min="1" max="1000" value="200" oninput="this.nextElementSibling.value = this.value / 1000">
+                <output>0.2</output>
+            </li>
+
+            <li>
+                <label for="slider_slopeDeteriorationRate">slope deterioration</label>
+                <input type="range" id="slider_slopeDeteriorationRate" class="slider" min="1" max="1000" value="200" oninput="this.nextElementSibling.value = this.value / 1000">
+                <output>0.2</output>
+            </li>
+
+            <li>
+                <label for="slider_detail">grid detail</label>
+                <input type="range" id="slider_detail" class="slider" min="30" max="150" value="80" oninput="this.nextElementSibling.value = this.value">
+                <output>80</output>
+            </li>
+
+            <li>
+                <label for="slider_rakeWidth">rake width</label>
+                <input type="range" id="slider_rakeWidth" class="slider" min="10" max="1000" value="200" oninput="this.nextElementSibling.value = this.value">
+                <output>200</output>
+            </li>
+
+            <li>
+                <label for="slider_rakePoints">rake points</label>
+                <input type="range" id="slider_rakePoints" class="slider" min="1" max="20" value="4" oninput="this.nextElementSibling.value = this.value">
+                <output>4</output>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
 <main>
 </main>
 </body>
