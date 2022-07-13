@@ -21,15 +21,15 @@
         <h2>Zen Garden</h2>
         <ul class="mainGuiList">
             <li>
-                <label for="slider_slopeStabilityThreshold">slope stability: </label>
-                <input type="range" id="slider_slopeStabilityThreshold" class="slider" min="1" max="1000" value="200" oninput="this.nextElementSibling.value = this.value / 1000">
-                <output>0.2</output>
+                <label for="slider_slopeStabilityThreshold">sand slope stability </label>
+                <input type="range" id="slider_slopeStabilityThreshold" class="slider" min="1" max="1000" value="350" oninput="this.nextElementSibling.value = this.value / 1000">
+                <output>0.35</output>
             </li>
 
             <li>
-                <label for="slider_slopeDeteriorationRate">slope deterioration</label>
-                <input type="range" id="slider_slopeDeteriorationRate" class="slider" min="1" max="1000" value="200" oninput="this.nextElementSibling.value = this.value / 1000">
-                <output>0.2</output>
+                <label for="slider_slopeDeteriorationRate">sand erosion speed</label>
+                <input type="range" id="slider_slopeDeteriorationRate" class="slider" min="1" max="1000" value="25" oninput="this.nextElementSibling.value = this.value / 1000">
+                <output>0.025</output>
             </li>
 
             <li>
@@ -46,8 +46,8 @@
 
             <li>
                 <label for="slider_rakePoints">rake points</label>
-                <input type="range" id="slider_rakePoints" class="slider" min="1" max="20" value="4" oninput="this.nextElementSibling.value = this.value">
-                <output>4</output>
+                <input type="range" id="slider_rakePoints" class="slider" min="1" max="20" value="5" oninput="this.nextElementSibling.value = this.value">
+                <output>5</output>
             </li>
 
 
