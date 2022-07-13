@@ -40,6 +40,11 @@ function setup() {
     colorRakeIdle = color(150, 0, 0);
 }
 
+function windowResized() {
+    let size = min(windowWidth, windowHeight);
+    mainCanvas = resizeCanvas(size, size);
+}
+
 function updateSidebar() {
     slopeStabilityThreshold = sliderFloat("slider_slopeStabilityThreshold");
     slopeDeteriorationRate = sliderFloat("slider_slopeDeteriorationRate");
