@@ -1,2 +1,3 @@
 # zen-garden
-work in progress - gently raking sand soothes the body and mind
+gently raking sand soothes the body and mind
+https://krabcode.github.io/zen-garden
